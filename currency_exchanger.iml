@@ -35,6 +35,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.apiguardian:apiguardian-api:1.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.8.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.junit.platform:junit-platform-engine:1.8.2" level="project" />
+    <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.46.0.0" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:1.7.36" level="project" />
   </component>
   <component name="SonarLintModuleSettings">
     <option name="uniqueId" value="77e5cc2b-c166-470e-b176-2f9bc50d0674" />
