@@ -149,11 +149,11 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
                     resultSet.getLong("id"),
                     resultSet.getString("code"),
                     resultSet.getString("full_name"),
-                    resultSet.getString("sign");
+                    resultSet.getString("sign")
+            );
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-                
-        );
+
     }
 }
