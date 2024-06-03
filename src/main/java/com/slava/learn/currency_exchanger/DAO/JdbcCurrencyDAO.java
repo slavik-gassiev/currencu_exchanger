@@ -58,7 +58,7 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
     }
 
     @Override
-    public CurrencyDTO save(CurrencyDTO currency) {
+    public Optional<CurrencyDTO> save(CurrencyDTO currency) {
         final String query = "INSERT INTO Currencies (code, full_name, sign) VALUES (?, ?, ?)";
 
         try(Connection connection = ConnectionDB.getConnection();
@@ -74,12 +74,12 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
                throw new SQLException();
             }
 
-            return getCurrencyDTO(resultSet);
+            return Optional.of(getCurrencyDTO(resultSet));
 
         } catch (SQLException e) {
 
         }
-        return null;
+        return Optional.empty();
     }
 
     @Override
