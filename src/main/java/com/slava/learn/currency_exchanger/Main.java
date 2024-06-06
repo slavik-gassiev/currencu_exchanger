@@ -4,12 +4,13 @@ import java.sql.*;
 
 public class Main {
     public static void main(String[] args) {
-        final String query = "SELECT * FROM Currencies WHERE id = ?";
+        final String query = "SELECT * FROM Currencies WHERE code = ?";
 
         try (Connection connection = ConnectionDB.getConnection();
             PreparedStatement statement = connection.prepareStatement(query)) {
 
-            statement.setLong(1, 1);
+
+            statement.setString(1, "USD");
             ResultSet resultSet = statement.executeQuery();
 
             if(resultSet.next()) {

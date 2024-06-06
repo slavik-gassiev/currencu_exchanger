@@ -17,6 +17,10 @@
           <element id="library" level="project" name="Maven: org.xerial:sqlite-jdbc:3.46.0.0" />
           <element id="library" level="project" name="Maven: org.slf4j:slf4j-api:1.7.36" />
           <element id="library" level="project" name="Maven: com.zaxxer:HikariCP:5.1.0" />
+          <element id="library" level="project" name="Maven: org.modelmapper:modelmapper:3.2.0" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.16.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.16.1" />
+          <element id="library" level="project" name="Maven: com.fasterxml.jackson.core:jackson-core:2.16.1" />
         </element>
       </element>
       <element id="directory" name="META-INF">

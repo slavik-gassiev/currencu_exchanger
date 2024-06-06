@@ -1,21 +1,21 @@
 package com.slava.learn.currency_exchanger.DAO;
 
 import com.slava.learn.currency_exchanger.ConnectionDB;
-import com.slava.learn.currency_exchanger.DTO.CurrencyDTO;
+import com.slava.learn.currency_exchanger.exeptions.DatabaseOperationException;
+import com.slava.learn.currency_exchanger.entity.Currency;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
 public class JdbcCurrencyDAO implements CurrencyDAO{
 
     @Override
-    public Optional<CurrencyDTO> findById(Long id) {
+    public Optional<Currency> findById(Long id) {
         final String query = "SELECT * FROM Currencies WHERE id = ?";
 
         try(Connection connection = ConnectionDB.getConnection();
@@ -25,17 +25,17 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                return Optional.of(getCurrencyDTO(resultSet));
+                return Optional.of(getCurrency(resultSet));
             }
 
         } catch (SQLException e) {
-
+            throw new DatabaseOperationException("Failed to read currency with id '" + id + "' from the database");
         }
         return Optional.empty();
     }
 
     @Override
-    public List<CurrencyDTO> findAll() {
+    public List<Currency> findAll() {
         final String query = "SELECT * FROM Currencies";
 
         try(Connection connection = ConnectionDB.getConnection();
@@ -43,22 +43,21 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            List<CurrencyDTO> currencies = new ArrayList<>();
+            List<Currency> currencies = new ArrayList<>();
 
             while(resultSet.next()) {
-                currencies.add(getCurrencyDTO(resultSet));
+                currencies.add(getCurrency(resultSet));
             }
 
-            return  currencies;
+            return currencies;
 
         } catch (SQLException e) {
-
+            throw new DatabaseOperationException("Failed to read currencies from database");
         }
-        return Collections.emptyList();
     }
 
     @Override
-    public Optional<CurrencyDTO> save(CurrencyDTO currency) {
+    public Currency save(Currency currency) {
         final String query = "INSERT INTO Currencies (code, full_name, sign) VALUES (?, ?, ?)";
 
         try(Connection connection = ConnectionDB.getConnection();
@@ -74,16 +73,16 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
                throw new SQLException();
             }
 
-            return Optional.of(getCurrencyDTO(resultSet));
+            return getCurrency(resultSet);
 
         } catch (SQLException e) {
-
+            throw new DatabaseOperationException(
+                    "Failed to save currency with code '" + currency.getCode() + "' to the database");
         }
-        return Optional.empty();
     }
 
     @Override
-    public Optional<CurrencyDTO> update(CurrencyDTO currency) {
+    public Optional<Currency> update(Currency currency) {
         final String query = "UPDATE  Currencies SET (code, full_name, sign) = (?, ?, ?)" +
                 "WHERE id = ?";
 
@@ -98,11 +97,13 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                return Optional.of(getCurrencyDTO(resultSet));
+                return Optional.of(getCurrency(resultSet));
             }
 
         } catch (SQLException e) {
-
+            throw new DatabaseOperationException(
+                    "Failed to update currency with id '" + currency.getId() + "' in the database"
+            );
         }
         return Optional.empty();
     }
@@ -119,12 +120,14 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
 
 
         } catch (SQLException e) {
-
+            throw new DatabaseOperationException(
+                    "Failed to delete currency with id '" + id + "' in the database"
+            );
         }
     }
 
     @Override
-    public Optional<CurrencyDTO> findByCode(String code) {
+    public Optional<Currency> findByCode(String code) {
         final String query = "SELECT * FROM Currencies WHERE code = ?";
 
         try(Connection connection = ConnectionDB.getConnection();
@@ -134,18 +137,20 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(resultSet.next()) {
-                return Optional.of(getCurrencyDTO(resultSet));
+                return Optional.of(getCurrency(resultSet));
             }
 
         } catch (SQLException e) {
-
+            throw new DatabaseOperationException(
+                    "Failed to read currency with code '" + code + "' in the database"
+            );
         }
         return Optional.empty();
     }
 
-    private CurrencyDTO getCurrencyDTO(ResultSet resultSet) {
+    private Currency getCurrency(ResultSet resultSet) {
         try {
-            return new CurrencyDTO(
+            return new Currency(
                     resultSet.getLong("id"),
                     resultSet.getString("code"),
                     resultSet.getString("full_name"),

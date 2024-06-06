@@ -1,6 +1,6 @@
 package com.slava.learn.currency_exchanger.DAO;
 
-import com.slava.learn.currency_exchanger.DTO.ExchangeCurrencyDTO;
+import com.slava.learn.currency_exchanger.entity.ExchangeCurrency;
 
-public interface ExchangeCurrencyDAO extends CrudDAO<ExchangeCurrencyDTO>{
+public interface ExchangeCurrencyDAO extends CrudDAO<ExchangeCurrency>{
 }

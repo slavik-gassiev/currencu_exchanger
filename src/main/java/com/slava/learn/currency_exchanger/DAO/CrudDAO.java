@@ -6,7 +6,7 @@ import java.util.Optional;
 public interface CrudDAO<T>{
     Optional<T> findById(Long id);
     List<T> findAll();
-    Optional<T> save(T entity);
+    T save(T entity);
     Optional<T> update(T entity);
     void delete(Long id);
 }
