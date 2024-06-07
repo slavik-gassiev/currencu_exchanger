@@ -64,7 +64,7 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setString(1, currency.getCode());
-            preparedStatement.setString(2, currency.getFull_name());
+            preparedStatement.setString(2, currency.getFullName());
             preparedStatement.setString(3, currency.getSign());
 
             ResultSet resultSet = preparedStatement.executeQuery();
@@ -90,7 +90,7 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
 
             preparedStatement.setString(1, currency.getCode());
-            preparedStatement.setString(2, currency.getFull_name());
+            preparedStatement.setString(2, currency.getFullName());
             preparedStatement.setString(3, currency.getSign());
             preparedStatement.setLong(4, currency.getId());
 
@@ -152,8 +152,8 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
         try {
             return new Currency(
                     resultSet.getLong("id"),
-                    resultSet.getString("code"),
                     resultSet.getString("full_name"),
+                    resultSet.getString("code"),
                     resultSet.getString("sign")
             );
         } catch (SQLException e) {

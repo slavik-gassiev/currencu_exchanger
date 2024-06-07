@@ -14,7 +14,7 @@ public class ConnectionDB {
     static {
         HikariConfig hikariConfig = new HikariConfig();
 
-        hikariConfig.setJdbcUrl("jdbc:sqlite:mydb.db");
+        hikariConfig.setJdbcUrl("jdbc:sqlite:C:\\java_projects\\currency_exchanger\\src\\main\\resources\\mydb.db");
         hikariConfig.setDriverClassName("org.sqlite.JDBC");
 
         HIKARI_DATA_SOURCE = new HikariDataSource(hikariConfig);
