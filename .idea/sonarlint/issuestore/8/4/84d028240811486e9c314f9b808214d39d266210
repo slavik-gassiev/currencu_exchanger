@@ -1,7 +1,10 @@
 
-X	java:S125"<This block of commented-out lines of code should be removed.(¢§•‘8à¬«ïş1
-G	java:S106)"+Replace this use of System.out by a logger.(ÆÀûı8å¬«ïş1
+X	java:S125"<This block of commented-out lines of code should be removed.(¢§•‘8¹×˜ÿ1
 l
-java:S1128"ORemove this unused import 'com.slava.learn.currency_exchanger.entity.Currency'.(¾™ŠÊ8ç¬«ïş1
+java:S1128"ORemove this unused import 'com.slava.learn.currency_exchanger.entity.Currency'.(¾™ŠÊ8‚¹×˜ÿ1
+†
+java:S1128"dRemove this unused import 'com.slava.learn.currency_exchanger.exeptions.DatabaseOperationException'.(È‡§ûÿÿÿÿ8‚¹×˜ÿ1
+B
+java:S1128"%Remove this unused import 'java.sql'.(´İ…Å8‚¹×˜ÿ1
 Q
-java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8ç¬«ïş1
+java:S1128"/Remove this unused import 'java.util.Optional'.(¨˜ëİüÿÿÿÿ8‚¹×˜ÿ1

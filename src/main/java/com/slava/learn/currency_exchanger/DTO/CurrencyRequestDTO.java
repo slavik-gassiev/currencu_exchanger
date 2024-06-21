@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CurrencyRequestDTO {
-    String code;
-    String name;
-    String sign;
+    private String name;
+    private String code;
+    private String sign;
 
 }

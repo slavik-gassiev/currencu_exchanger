@@ -3,6 +3,9 @@ package com.slava.learn.currency_exchanger.DAO;
 import com.slava.learn.currency_exchanger.ConnectionDB;
 import com.slava.learn.currency_exchanger.exeptions.DatabaseOperationException;
 import com.slava.learn.currency_exchanger.entity.Currency;
+import com.slava.learn.currency_exchanger.exeptions.EntityExistsException;
+import org.sqlite.SQLiteErrorCode;
+import org.sqlite.SQLiteException;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -58,7 +61,7 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
 
     @Override
     public Currency save(Currency currency) {
-        final String query = "INSERT INTO Currencies (code, full_name, sign) VALUES (?, ?, ?)";
+        final String query = "INSERT INTO Currencies (code, full_name, sign) VALUES (?, ?, ?) RETURNING *";
 
         try(Connection connection = ConnectionDB.getConnection();
             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
@@ -70,16 +73,23 @@ public class JdbcCurrencyDAO implements CurrencyDAO{
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if(!resultSet.next()) {
-               throw new SQLException();
+                throw new DatabaseOperationException("Failed to save currency with code '" + currency.getCode() + "' to the database");
             }
 
             return getCurrency(resultSet);
 
-        } catch (SQLException e) {
-            throw new DatabaseOperationException(
-                    "Failed to save currency with code '" + currency.getCode() + "' to the database");
+        }
+        catch (SQLException e) {
+            if (e instanceof SQLiteException) {
+                SQLiteException exception = (SQLiteException) e;
+                if (exception.getResultCode().code == SQLiteErrorCode.SQLITE_CONSTRAINT_UNIQUE.code) {
+                    throw new EntityExistsException("Currency with code '" + currency.getCode() + "' already exists");
+                }
+            }
+            throw new DatabaseOperationException("Failed to save currency with code '" + currency.getCode() + "' to the database");
         }
     }
+
 
     @Override
     public Optional<Currency> update(Currency currency) {
