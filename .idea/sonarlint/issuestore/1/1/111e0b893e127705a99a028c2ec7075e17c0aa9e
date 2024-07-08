@@ -1,0 +1,15 @@
+
+O
+java:S1948"-Make "exchangeDAO" transient or serializable.(éÈåûüÿÿÿÿ8šë¬ã€2
+N
+java:S1948"1Make "exchangeService" transient or serializable.(Ã´ÁÍ8šë¬ã€2
+–
+java:S1130@"yRemove the declaration of thrown exception 'jakarta.servlet.ServletException', as it cannot be thrown from method's body.(Œö›Æ8ªë¬ã€2
+s
+java:S1128"VRemove this unused import 'com.slava.learn.currency_exchanger.DTO.CurrencyRequestDTO'.(ÍÛÅ“8¹ë¬ã€2
+†
+java:S1128"dRemove this unused import 'com.slava.learn.currency_exchanger.exeptions.DatabaseOperationException'.(È‡§ûÿÿÿÿ8Ö©³ã€2
+]
+java:S1128";Remove this unused import 'jakarta.servlet.ServletRequest'.(¿òßüÿÿÿÿ8¹ë¬ã€2
+^
+java:S1128"<Remove this unused import 'jakarta.servlet.ServletResponse'.(Õ©êûÿÿÿÿ8¹ë¬ã€2

@@ -1,0 +1,9 @@
+
+c
+java:S1854"FRemove this useless assignment to local variable "exchangeRequestDTO".(è²¬ô8½ØË£ƒ2
+T
+java:S1481"7Remove this unused "exchangeRequestDTO" local variable.(è²¬ô8¾ØË£ƒ2
+U
+java:S1068"3Remove this unused "exchangeService" private field.(—úÍ”ıÿÿÿÿ8ÀØË£ƒ2
+R
+java:S1068"0Remove this unused "objectMapper" private field.(­ãĞåüÿÿÿÿ8ÁØË£ƒ2

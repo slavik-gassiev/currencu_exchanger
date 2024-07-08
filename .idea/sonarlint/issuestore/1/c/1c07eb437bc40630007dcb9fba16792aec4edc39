@@ -1,0 +1,7 @@
+
+h	java:S112ª"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òιόÿÿÿÿ8η‡άγ€2
+o
+java:S1192s"RDefine a constant instead of duplicating this literal "' in the database" 3 times.(΅΄8–άγ€2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ΓΚ—ϋÿÿÿÿ8£άγ€2
+]
+java:S1193S"@Replace the usage of the "instanceof" operator by a catch block.( Ψ™„8Εάγ€2

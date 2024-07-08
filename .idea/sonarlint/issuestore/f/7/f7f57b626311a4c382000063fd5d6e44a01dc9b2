@@ -1,0 +1,7 @@
+
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(éÍ‹¢8ËªÞ…ƒ2
+y
+java:S3008"WRename this field "MODEL_MAPPER" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¬¹…¢ÿÿÿÿÿ8ßªÞ…ƒ2
+\
+java:S1118
+":Add a private constructor to hide the implicit public one.(ÇßŽêûÿÿÿÿ8ßªÞ…ƒ2

@@ -1,0 +1,33 @@
+
+h	java:S112î"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8ıÛôâ€2
+˜
+java:S1192$"vDefine a constant instead of duplicating this literal "  JOIN Currencies tc ON er.target_currency_id = tc.id" 3 times.(ŸÆ©éşÿÿÿÿ8ıÛôâ€2
+k
+java:S1192"IDefine a constant instead of duplicating this literal "  SELECT" 3 times.(µ³¶­şÿÿÿÿ8şÛôâ€2
+
+java:S1192"_Define a constant instead of duplicating this literal "    bc.full_name AS base_name," 3 times.(×üÿÿÿÿ8ÿÛôâ€2
+w
+java:S1192"ZDefine a constant instead of duplicating this literal "    bc.code AS base_code," 3 times.(Ç¿ôƒ8ÿÛôâ€2
+s
+java:S1192"VDefine a constant instead of duplicating this literal "    bc.id AS base_id," 3 times.(–ÌÓŞ8ÿÛôâ€2
+u
+java:S1192""XDefine a constant instead of duplicating this literal "  FROM ExchangeRates er" 3 times.(˜Á÷ú8ÿÛôâ€2
+w
+java:S1192"ZDefine a constant instead of duplicating this literal "    bc.sign AS base_sign," 3 times.(İĞ‰8€Üôâ€2
+n
+java:S1192"QDefine a constant instead of duplicating this literal "    er.id AS id," 3 times.(Âˆ› 8€Üôâ€2
+ƒ
+java:S1192"aDefine a constant instead of duplicating this literal "    tc.full_name AS target_name," 3 times.(õŒóÜûÿÿÿÿ8€Üôâ€2
+~
+java:S1192 "\Define a constant instead of duplicating this literal "    tc.sign AS target_sign," 3 times.(ìûÁ“ÿÿÿÿÿ8€Üôâ€2
+z
+java:S1192"XDefine a constant instead of duplicating this literal "    tc.id AS target_id," 3 times.(æÕïÌıÿÿÿÿ8€Üôâ€2
+p
+java:S1192!"TDefine a constant instead of duplicating this literal "    er.rate AS rate" 3 times.(¹ëÊd8€Üôâ€2
+–
+java:S1192#"tDefine a constant instead of duplicating this literal "  JOIN Currencies bc ON er.base_currency_id = bc.id" 3 times.(¯Ìôøÿÿÿÿ8€Üôâ€2
+~
+java:S1192"\Define a constant instead of duplicating this literal "    tc.code AS target_code," 3 times.(Ò€–úÿÿÿÿ8Üôâ€2
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÃÊ—ûÿÿÿÿ8ƒÜôâ€2
+]
+java:S1193t"@Replace the usage of the "instanceof" operator by a catch block.( Ø™„8¹Ó€2
